@@ -4,14 +4,14 @@ class CaixaDaLanchonete {
         if(itens.length == 0 ){
           return ("Não há itens no carrinho de compra!");
         }
-        var temItemIvalido = false;
-        var menu = ["cafe", "chantily","suco","sanduiche","queijo","salgado","combo1","combo2"];
-        var valorTotal = 0;
-        for(var i = 0; i <= itens.length-1; i++){
-            var item = itens[i];
-            var itemArray = item.split(',');
+        let temItemIvalido = false;
+        const menu = ["cafe", "chantily","suco","sanduiche","queijo","salgado","combo1","combo2"];
+        let valorTotal = 0;
+        for(let i = 0; i <= itens.length-1; i++){
+            let item = itens[i];
+            let itemArray = item.split(',');
             item = itemArray[0];
-            var qtdItem = itemArray[1];
+            let qtdItem = itemArray[1];
             if(qtdItem == 0 ){
                 return "Quantidade inválida!";
             }
@@ -66,7 +66,7 @@ class CaixaDaLanchonete {
         }else{
             return "Forma de pagamento inválida!";
         }
-        var valorTotalFormatado = valorTotal.toFixed(2);
+        let valorTotalFormatado = valorTotal.toFixed(2);
         valorTotalFormatado = valorTotalFormatado.replace('.',',');
         return "R$ " + valorTotalFormatado;
     }
@@ -74,7 +74,7 @@ class CaixaDaLanchonete {
 
 }
 
-var caixa = new CaixaDaLanchonete();
+let caixa = new CaixaDaLanchonete();
 
 console.log(caixa.calcularValorDaCompra("debito",["cafe,1","chantily,2","suco,1","queijo,1","sanduiche,4","salgado,3","combo1,1","combo2,1"]));
 
